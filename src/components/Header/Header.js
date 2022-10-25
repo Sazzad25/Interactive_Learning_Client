@@ -29,8 +29,8 @@ const Header = () => {
                       <Link to="/blog" className="text-decoration-none">
                       <li className="nav-link items  ms-3 text-info fw-bolder">Blog</li>
                       </Link>
-                      <Link to="/profile" className="text-decoration-none">
-                      <li className="nav-link items  ms-3 text-info fw-bolder">Profile</li>
+                      <Link to="/login" className="text-decoration-none">
+                      <li className="nav-link items  ms-3 text-info fw-bolder">Login</li>
                       </Link>
                  
                       <Button variant="light">Log Out</Button>
