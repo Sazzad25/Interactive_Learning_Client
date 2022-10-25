@@ -8,7 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 // import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
-const Header = () => {
+const Header = ({user, setUser}) => {
     return (
         <Navbar className='mb-4' collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
@@ -32,7 +32,9 @@ const Header = () => {
                       <Link to="/login" className="text-decoration-none">
                       <li className="nav-link items  ms-3 text-info fw-bolder">Login</li>
                       </Link>
-                 
+                      <li className="nav-link items  ms-3 text-info fw-bolder">
+            {user?.displayName}
+          </li>
                       <Button variant="light">Log Out</Button>
             </Nav>
             <div className='d-lg-none'>

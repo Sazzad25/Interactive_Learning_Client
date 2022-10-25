@@ -1,9 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
-import { RouterProvider } from 'react-router-dom';
-import { routes } from './components/Routes/Routes/Routes';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Main from './components/layout/Main';
+import Home from './components/Home/Home';
+import Courses from './components/Courses/Courses';
+import FAQ from './components/FAQ/FAQ';
+import Blog from './components/Blog/Blog';
+import Login from './components/Login/Login';
+import Registration from './components/Registration/Registration';
+import { useState } from 'react';
 
 function App() {
+  const [user, setUser] = useState('');
+  const routes = createBrowserRouter([
+    {
+        path: '/',
+        element: <Main user={user} setUser={setUser}></Main>,
+        children: [
+            {
+                path: '/',
+                element: <Home></Home>,
+            },
+            {
+                path: '/courses',
+                element: <Courses></Courses>,
+            },
+           
+            {
+                path: '/faq',
+                element: <FAQ></FAQ>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
+            },
+            
+            {
+                path: '/login',
+                element: <Login user={user} setUser={setUser}></Login>
+            },
+
+            {
+                path: '/registration',
+                element: <Registration user={user} setUser={setUser}></Registration>
+            }
+               
+        ]
+    }
+])
   return (
     <div className="App">
        <RouterProvider router={routes}></RouterProvider>
