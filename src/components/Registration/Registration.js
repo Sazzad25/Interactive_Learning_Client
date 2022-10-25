@@ -4,15 +4,18 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile, sendEmailVerifi
 import Swal from "sweetalert2";
 import useGoogle from "../Google/Google";
 import app from "../../firebase/firebase.config";
+import useGithub from "../Github/Github";
 
 const Registration = ({user, setUser}) => {
   const [name, setName] = useState('');
+  const [photoURL, setPhotoURL] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isDesabled, setIsDesabled] = useState(true);
   const auth = getAuth(app);
   const {test, test2} = useGoogle();
+  const {handleGithubSignIn} = useGithub();
 
 
   const handleName = (e) =>{
@@ -27,15 +30,19 @@ const Registration = ({user, setUser}) => {
     setPassword(e.target.value);
   }
 
+  const handlePhotoURL = (e) =>{
+    setPhotoURL(e.target.value);
+  }
+
   const handleRegister = (e) => {
     e.preventDefault();
-    if((name, email, password)) {
+    if((name, photoURL, email, password)) {
       createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
         const userInfo = userCredential.user;
         setUser(userInfo);
-        updateName();
+        updateName(name, photoURL);
         verify();
         // console.log(userInfo);
         setError('');
@@ -59,9 +66,10 @@ const Registration = ({user, setUser}) => {
     }
   };
 
-  const updateName = () => {
+  const updateName = (name, photoURL) => {
     updateProfile(auth.currentUser, {
       displayName: name,
+      photoURL: photoURL,
     }).
     then(() => {
       // Profile updated!
@@ -117,6 +125,13 @@ const Registration = ({user, setUser}) => {
                 placeholder="Enter your name"
                 required
               />
+              <input 
+                onBlur={handlePhotoURL}               
+                className="form-control p-3 m-2"
+                type="text"
+                placeholder="Photo URL"
+              />
+              
               <input
                 onBlur={handleEmail}
                 className="form-control p-3 m-2"
@@ -165,7 +180,7 @@ const Registration = ({user, setUser}) => {
             <p className="fw-bold">Google SignIn</p>
           </button>
           <button
-           onClick={test}
+           onClick={handleGithubSignIn}
            className="btn mt-3 border d-flex align-items-center justify-content-evenly p-2 m-auto">
             <img
               className="w-25 image-fluid btn-image"

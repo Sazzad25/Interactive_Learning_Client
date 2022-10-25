@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import app from "../../firebase/firebase.config";
+import useGithub from "../Github/Github";
 import useGoogle from "../Google/Google";
 
 const Login = ({user, setUser}) => {
@@ -14,6 +15,7 @@ const Login = ({user, setUser}) => {
   const auth = getAuth(app);
 
   const {test, test2} = useGoogle();
+  const {handleGithubSignIn} = useGithub();
 
   const handleEmail = (e) =>{
     setEmail(e.target.value);
@@ -99,7 +101,7 @@ const Login = ({user, setUser}) => {
             <p className="fw-bold">Google SignIn</p>
           </button>
           <button
-           onClick={test}
+           onClick={handleGithubSignIn}
            className="btn mt-3 border d-flex align-items-center justify-content-evenly p-2 m-auto">
             <img
               className="w-25 image-fluid btn-image"

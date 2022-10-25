@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { FaGraduationCap } from 'react-icons/fa';
+import { FaGraduationCap, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 // import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
@@ -40,7 +40,12 @@ const Header = ({user, setUser}) => {
                       
                       </Link>
                       <li className="nav-link items  ms-3 text-info fw-bolder">
-            {user?.displayName}
+            {user?.photoURL?
+            <Image 
+            style={{height: '30px'}} roundedCircle 
+            src={user?.photoURL}></Image>
+            : <FaUser></FaUser>
+            }
           </li>
             </Nav>
             <div className='d-lg-none'>
