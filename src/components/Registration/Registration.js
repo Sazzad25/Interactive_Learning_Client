@@ -102,7 +102,7 @@ const Registration = ({user, setUser}) => {
         <div className="register-image image-fluid w-100  ">
           <img
             className="w-100 img-fluid image-fluid"
-            src="https://i.ibb.co/hYJTmVX/undraw-Mobile-login-re-9ntv-1.png"
+            src="https://www.pngfind.com/pngs/m/621-6215340_registration-logo-png-register-now-transparent-png.png"
             alt=""
           />
         </div>
@@ -163,6 +163,16 @@ const Registration = ({user, setUser}) => {
               alt=""
             />
             <p className="fw-bold">Google SignIn</p>
+          </button>
+          <button
+           onClick={test}
+           className="btn mt-3 border d-flex align-items-center justify-content-evenly p-2 m-auto">
+            <img
+              className="w-25 image-fluid btn-image"
+              src="https://img.icons8.com/color/344/github-logo.png"
+              alt=""
+            />
+            <p className="fw-bold">Github SignIn</p>
           </button>
         </div>
       </div>

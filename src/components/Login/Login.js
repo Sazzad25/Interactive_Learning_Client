@@ -50,7 +50,7 @@ const Login = ({user, setUser}) => {
         <div className="register-image image-fluid w-100  ">
           <img
             className="w-100 img-fluid image-fluid"
-            src="https://i.ibb.co/0hLvWvP/undraw-Login-re-4vu2.png"
+            src="https://img.lovepik.com/element/45009/2341.png_300.png"
             alt=""
           />
         </div>
@@ -97,6 +97,16 @@ const Login = ({user, setUser}) => {
               alt=""
             />
             <p className="fw-bold">Google SignIn</p>
+          </button>
+          <button
+           onClick={test}
+           className="btn mt-3 border d-flex align-items-center justify-content-evenly p-2 m-auto">
+            <img
+              className="w-25 image-fluid btn-image"
+              src="https://img.icons8.com/color/344/github-logo.png"
+              alt=""
+            />
+            <p className="fw-bold">Github SignIn</p>
           </button>
         </div>
 
