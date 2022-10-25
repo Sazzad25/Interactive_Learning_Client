@@ -30,7 +30,13 @@ const Header = ({user, setUser}) => {
                       <li className="nav-link items  ms-3 text-info fw-bolder">Blog</li>
                       </Link>
                       <Link to="/login" className="text-decoration-none">
-                      <li className="nav-link items  ms-3 text-info fw-bolder">Login</li>
+                      {user?.photoURL ?
+                <Image 
+                style={{height: '30px'}} roundedCircle 
+                src={user?.photoURL}></Image>
+                : <li className="nav-link items  ms-3 text-info fw-bolder">Login</li>
+                }
+                      
                       </Link>
                       <li className="nav-link items  ms-3 text-info fw-bolder">
             {user?.displayName}
