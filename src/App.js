@@ -11,6 +11,7 @@ import Topic from './components/Topic/Topic';
 import Registration from './components/Registration/Registration';
 import { useState } from 'react';
 import SingleCard from './components/SingleCard/SingleCard';
+import CheckOut from './components/CheckOut/CheckOut';
 
 function App() {
   const [user, setUser] = useState('');
@@ -65,6 +66,11 @@ function App() {
                 loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`),
 
             },
+
+            {
+                path: '/checkout/:id',
+                element: <CheckOut></CheckOut>
+            }
                
         ]
     }

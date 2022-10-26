@@ -6,7 +6,7 @@ const SingleCard = () => {
     const categoryNews = useLoaderData();
     return (
         <div>
-            <h2>This is Category has news: {categoryNews.length}</h2>
+            <h2>This is Courses has topic: {categoryNews.length}</h2>
             {
                 categoryNews.map(topics =><Cart
                 key={topics._id}

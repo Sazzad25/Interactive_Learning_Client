@@ -13,7 +13,7 @@ const Topic = () => {
         <Card.Text>
           {details}
         </Card.Text>
-        <Link to={`/category/${category_id}`}>
+        <Link to={`/checkout/${category_id}`}>
         <Button variant="primary">Get Premium access</Button>
         </Link>
       </Card.Body>

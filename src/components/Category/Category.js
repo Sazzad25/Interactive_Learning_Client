@@ -13,7 +13,6 @@ const Category = () => {
     }, [])
     return (
         <div>
-            <h2>Category Details: {categories.length}</h2>
             {
                 categories.map(topics =><Cart
                 key={topics._id}
