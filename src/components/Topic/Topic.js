@@ -14,7 +14,7 @@ const Topic = () => {
           {details}
         </Card.Text>
         <Link to={`/category/${category_id}`}>
-        <Button variant="primary">All News Category</Button>
+        <Button variant="primary">Get Premium access</Button>
         </Link>
       </Card.Body>
     </Card>
