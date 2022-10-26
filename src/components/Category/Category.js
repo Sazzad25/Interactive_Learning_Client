@@ -14,14 +14,14 @@ const Category = () => {
     return (
         <div>
             <h2>Category Details: {categories.length}</h2>
-            {/* {
-                categoryTopics.map(topics =><Cart
+            {
+                categories.map(topics =><Cart
                 key={topics._id}
                 topics={topics}
                 >
 
                 </Cart>)
-            } */}
+            }
         </div>
     );
 };
