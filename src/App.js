@@ -70,7 +70,12 @@ function App() {
             {
                 path: '/checkout/:id',
                 element: <CheckOut></CheckOut>
-            }
+            },
+
+            {
+                path:'*',
+                element: <div>This route not found</div>
+              }
                
         ]
     }
