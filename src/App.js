@@ -46,15 +46,22 @@ function App() {
                 element: <Registration user={user} setUser={setUser}></Registration>
             },
 
-            {
-                path: '/category/:id',
-                element: <Category></Category>
-            },
+            // {
+            //     path: '/category/:id',
+            //     element: <Category></Category>,
+            //     loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`),
+            // },
 
             {
-                path: '/category/:id',
-                element: <Topic></Topic>
+                path: '/category',
+                element: <Category></Category>
+                
             },
+
+            // {
+            //     path: '/category/:id',
+            //     element: <Topic></Topic>
+            // },
                
         ]
     }
