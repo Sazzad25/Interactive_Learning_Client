@@ -10,6 +10,7 @@ import Category from './components/Category/Category';
 import Topic from './components/Topic/Topic';
 import Registration from './components/Registration/Registration';
 import { useState } from 'react';
+import SingleCard from './components/SingleCard/SingleCard';
 
 function App() {
   const [user, setUser] = useState('');
@@ -46,22 +47,24 @@ function App() {
                 element: <Registration user={user} setUser={setUser}></Registration>
             },
 
-            // {
-            //     path: '/category/:id',
-            //     element: <Category></Category>,
-            //     loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`),
-            // },
-
             {
                 path: '/category',
                 element: <Category></Category>
                 
             },
 
-            // {
-            //     path: '/category/:id',
-            //     element: <Topic></Topic>
-            // },
+            {
+                path: '/category/:id',
+                element: <SingleCard></SingleCard>,
+                loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`),
+            },
+
+            {
+                path: '/topics/:id',
+                element: <Topic></Topic>,
+                loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`),
+
+            },
                
         ]
     }
