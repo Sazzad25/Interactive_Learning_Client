@@ -6,6 +6,8 @@ import Courses from './components/Courses/Courses';
 import FAQ from './components/FAQ/FAQ';
 import Blog from './components/Blog/Blog';
 import Login from './components/Login/Login';
+import Category from './components/Category/Category';
+import Topic from './components/Topic/Topic';
 import Registration from './components/Registration/Registration';
 import { useState } from 'react';
 
@@ -42,13 +44,23 @@ function App() {
             {
                 path: '/registration',
                 element: <Registration user={user} setUser={setUser}></Registration>
-            }
+            },
+
+            {
+                path: '/category/:id',
+                element: <Category></Category>
+            },
+
+            {
+                path: '/category/:id',
+                element: <Topic></Topic>
+            },
                
         ]
     }
 ])
   return (
-    <div className="App">
+    <div>
        <RouterProvider router={routes}></RouterProvider>
     </div>
   );
