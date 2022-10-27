@@ -12,6 +12,7 @@ import Registration from './components/Registration/Registration';
 import { useState } from 'react';
 import SingleCard from './components/SingleCard/SingleCard';
 import CheckOut from './components/CheckOut/CheckOut';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   const [user, setUser] = useState('');
@@ -69,7 +70,7 @@ function App() {
 
             {
                 path: '/checkout/:id',
-                element: <CheckOut></CheckOut>
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
             },
 
             {

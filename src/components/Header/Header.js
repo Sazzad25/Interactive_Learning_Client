@@ -40,12 +40,7 @@ const Header = ({user, setUser}) => {
                       
                       </Link>
                       <li className="nav-link items  ms-3 text-info fw-bolder">
-            {user?.photoURL?
-            <Image 
-            style={{height: '30px'}} roundedCircle 
-            src={user?.photoURL}></Image>
-            : <FaUser></FaUser>
-            }
+                      {user?.displayName}
           </li>
             </Nav>
             <div className='d-lg-none'>
