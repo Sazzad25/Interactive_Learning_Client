@@ -11,6 +11,8 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 // import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = ({user, setUser}) => {
+
+  // set Them toggle
   const [isDarkMode, setDarkMode] = React.useState(false);
 
   const toggleDarkMode = (sunColor) => {

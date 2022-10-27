@@ -5,9 +5,9 @@ import Cart from '../Cart/Cart';
 const Category = () => {
     const [categories, setCategories] = useState([]);
 
-    
+    // data loaded to serve side
     useEffect( () =>{
-        fetch('http://localhost:5000/news')
+        fetch('https://learning-server-amber.vercel.app/news')
         .then(res => res.json())
         .then(data => setCategories(data));
     }, [])

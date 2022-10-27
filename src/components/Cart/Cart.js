@@ -3,6 +3,7 @@ import { Card, Image } from 'react-bootstrap';
 import { FaBookmark, FaEye, FaShareAlt, FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+// details description of courses
 const Cart = ({topics}) => {
     const {_id, title, author, details, image_url, total_view, rating} = topics;
     return (

@@ -59,13 +59,13 @@ function App() {
             {
                 path: '/category/:id',
                 element: <SingleCard></SingleCard>,
-                loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`),
+                loader: ({params}) => fetch(`https://learning-server-amber.vercel.app/category/${params.id}`),
             },
 
             {
                 path: '/topics/:id',
                 element: <Topic></Topic>,
-                loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`),
+                loader: ({params}) => fetch(`https://learning-server-amber.vercel.app/news/${params.id}`),
 
             },
 

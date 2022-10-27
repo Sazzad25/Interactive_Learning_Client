@@ -7,6 +7,7 @@ import app from "../../firebase/firebase.config";
 import useGithub from "../Github/Github";
 import useGoogle from "../Google/Google";
 
+// Email and Password signing
 const Login = ({user, setUser}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

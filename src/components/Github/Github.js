@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import app from "../../firebase/firebase.config";
 
+// Github signing
 const useGithub = () =>{
     const auth = getAuth(app);
     const githubProvider = new GithubAuthProvider();

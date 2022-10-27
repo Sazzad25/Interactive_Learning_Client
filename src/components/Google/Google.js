@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import app from "../../firebase/firebase.config";
 
-
+// Google signing
 const useGoogle = () => {
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
