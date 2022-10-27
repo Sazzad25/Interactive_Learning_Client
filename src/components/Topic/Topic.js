@@ -9,7 +9,7 @@ const Topic = () => {
     <Card>
       <Card.Img variant="top" src={image_url} />
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title>{title} <Link to="/files/myfile.pdf" target="_blank" download>Download</Link> </Card.Title>
         <Card.Text>
           {details}
         </Card.Text>

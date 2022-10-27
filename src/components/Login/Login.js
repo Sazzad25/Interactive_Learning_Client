@@ -47,7 +47,7 @@ const Login = ({user, setUser}) => {
   }
 
   return (
-    <div className="mt-5">
+    <div className="mt-5 col-12">
       <div className="main-container d-flex container justify-content-between align-items-center">
         <div className="register-image image-fluid w-100  ">
           <img

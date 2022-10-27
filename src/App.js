@@ -31,7 +31,7 @@ function App() {
             },
            
             {
-                path: '/faq',
+                path: '',
                 element: <FAQ></FAQ>
             },
             {
