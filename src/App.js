@@ -13,6 +13,7 @@ import { useState } from 'react';
 import SingleCard from './components/SingleCard/SingleCard';
 import CheckOut from './components/CheckOut/CheckOut';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import PrivateRoutes from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   const [user, setUser] = useState('');

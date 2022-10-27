@@ -1,7 +1,7 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import app from "../../firebase/firebase.config";
 import useGithub from "../Github/Github";
@@ -13,6 +13,11 @@ const Login = ({user, setUser}) => {
   const [error, setError] = useState('');
   const [modalShow, setModalShow] = useState(false);
   const auth = getAuth(app);
+  const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+
 
   const {test, test2} = useGoogle();
   const {handleGithubSignIn} = useGithub();
@@ -31,7 +36,8 @@ const Login = ({user, setUser}) => {
     // Signed in 
     const userInfo = userCredential.user;
     setUser(userInfo);
-    // console.log(userInfo);
+    // navigate('/blog');
+    navigate('/blog');
     Swal.fire(
       'Good job!',
       'You clicked the button!',

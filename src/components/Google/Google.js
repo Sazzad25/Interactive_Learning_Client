@@ -1,5 +1,6 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import app from "../../firebase/firebase.config";
 
 
@@ -8,6 +9,11 @@ const useGoogle = () => {
     const provider = new GoogleAuthProvider();
     // const [userInfo, setUserInfo] = useState('');
     const [userInfo, setUserInfo] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+
 
 
     const test = () => {
@@ -19,6 +25,7 @@ const useGoogle = () => {
     // The signed-in user info.
     const user = result.user;
     setUserInfo(user);
+    navigate('/blog');
     // ...
   }).catch((error) => {
     // Handle Errors here.
