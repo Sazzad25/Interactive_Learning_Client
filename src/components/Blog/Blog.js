@@ -4,6 +4,7 @@ const Blog = () => {
     return (
         <div>
             <div>
+                <h1>Question</h1>
                 <h2>Q.1:  what is cors?</h2>
                 <p>CORS (Cross-Origin Resource Sharing) is a system, consisting of transmitting HTTP headers, that determines whether browsers block frontend JavaScript code from accessing responses for cross-origin requests. The same-origin security policy forbids cross-origin access to resources. In ReactJS, Cross-Origin Resource Sharing (CORS) refers to the method that allows you to make requests to the server deployed at a different domain. As a reference, if the frontend and backend are at two different domains, we need CORS there.</p>
             </div>

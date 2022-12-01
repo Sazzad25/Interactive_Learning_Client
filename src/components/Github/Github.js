@@ -18,9 +18,9 @@ const useGithub = () =>{
         signInWithPopup(auth, githubProvider)
         .then(result => {
             const user = result.user;
-            console.log(user);
+            
             setUserInfo(user);
-            navigate('/blog');
+            navigate(from, {replace: true});
         })
         .catch(error =>{
             console.error ('error: ', error)

@@ -9,18 +9,14 @@ import Login from './components/Login/Login';
 import Category from './components/Category/Category';
 import Topic from './components/Topic/Topic';
 import Registration from './components/Registration/Registration';
-import { useState } from 'react';
 import SingleCard from './components/SingleCard/SingleCard';
 import CheckOut from './components/CheckOut/CheckOut';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import PrivateRoutes from './components/PrivateRoute/PrivateRoute';
-
 function App() {
-  const [user, setUser] = useState('');
   const routes = createBrowserRouter([
     {
         path: '/',
-        element: <Main user={user} setUser={setUser}></Main>,
+        element: <Main></Main>,
         children: [
             {
                 path: '/',
@@ -42,12 +38,12 @@ function App() {
             
             {
                 path: '/login',
-                element: <Login user={user} setUser={setUser}></Login>
+                element: <Login></Login>
             },
 
             {
                 path: '/registration',
-                element: <Registration user={user} setUser={setUser}></Registration>
+                element: <Registration></Registration>
             },
 
             {

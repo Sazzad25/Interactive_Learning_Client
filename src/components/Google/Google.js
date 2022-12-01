@@ -25,7 +25,7 @@ const useGoogle = () => {
     // The signed-in user info.
     const user = result.user;
     setUserInfo(user);
-    navigate('/blog');
+    navigate(from, {replace: true});
     // ...
   }).catch((error) => {
     // Handle Errors here.
