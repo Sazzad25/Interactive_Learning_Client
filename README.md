@@ -4,7 +4,7 @@ Interactive Learning
 
 
 ## Live Site Link
-Hosted in Firebase -> https://practice-auth-1de62.web.app/
+Hosted in Firebase -> https://practice-auth-1de62.web.app
 
 
 ### Projet Deatils
